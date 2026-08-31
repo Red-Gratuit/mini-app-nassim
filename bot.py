@@ -15,7 +15,7 @@ MINI_APP_URL = os.environ.get('MINI_APP_URL', 'https://web-production-b6e6b.up.r
 # S'assurer que l'URL a le protocole HTTPS
 if MINI_APP_URL and not MINI_APP_URL.startswith('https://'):
     MINI_APP_URL = 'https://' + MINI_APP_URL
-CANAL_URL = 'https://t.me/+9LU2MBIJ_N04NzU8'
+CANAL_URL = 'https://t.me/+QmM6N0VtnDllYzBk'
 CONTACT_URL = 'https://snapchat.com/add/El.Doctor59'
 TELEGRAM_API_URL = f"https://api.telegram.org/bot{BOT_TOKEN}"
 
