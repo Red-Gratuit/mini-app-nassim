@@ -47,16 +47,23 @@ def send_photo(chat_id, caption, reply_markup=None):
         data['reply_markup'] = reply_markup
     
     try:
-        # Essayer d'envoyer la photo depuis le fichier
-        with open('logo.jpg', 'rb') as photo:
+        # Essayer d'envoyer la photo depuis le fichier avec chemin absolu
+        logo_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'frontend', 'logo.jpg')
+        if not os.path.exists(logo_path):
+            # Essayer le chemin racine
+            logo_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logo.jpg')
+        
+        print(f"📸 Chemin logo: {logo_path}, existe: {os.path.exists(logo_path)}")
+        
+        with open(logo_path, 'rb') as photo:
             files = {'photo': photo}
             response = requests.post(f"{TELEGRAM_API_URL}/sendPhoto", files=files, data=data)
             return response.json()
-    except FileNotFoundError:
-        print(f"Photo non trouvée, envoi du texte seulement")
+    except FileNotFoundError as e:
+        print(f"❌ Photo non trouvée: {e}, envoi du texte seulement")
         return send_message(chat_id, caption, reply_markup)
     except Exception as e:
-        print(f"Erreur envoi photo: {e}")
+        print(f"❌ Erreur envoi photo: {e}")
         return send_message(chat_id, caption, reply_markup)
 
 def handle_start(chat_id):
