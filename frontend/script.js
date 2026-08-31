@@ -869,7 +869,7 @@ function submitAdminCode() {
   const codeInput = document.getElementById('admin-code-input');
   const code = codeInput ? codeInput.value.trim() : '';
   
-  if (code === 'Nostraa5962') {
+  if (code === 'Eldoctor5962') {
     isAdminAuthenticated = true;
     hideAdminLogin();
     showCustomAlert('✅ Authentification réussie', 'Bienvenue dans le panel admin !', 'success');
