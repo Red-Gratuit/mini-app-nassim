@@ -11,12 +11,12 @@ import os
 
 # Configuration
 BOT_TOKEN = os.environ.get('BOT_TOKEN')
-MINI_APP_URL = os.environ.get('MINI_APP_URL', 'https://web-production-fa8677.up.railway.app')
+MINI_APP_URL = os.environ.get('MINI_APP_URL', 'https://web-production-b6e6b.up.railway.app/')
 # S'assurer que l'URL a le protocole HTTPS
 if MINI_APP_URL and not MINI_APP_URL.startswith('https://'):
     MINI_APP_URL = 'https://' + MINI_APP_URL
-CANAL_URL = 'https://t.me/+AoIEfVMLnchiODFk'
-CONTACT_URL = 'https://snapchat.com/add/NostraaFafa'
+CANAL_URL = 'https://t.me/+9LU2MBIJ_N04NzU8'
+CONTACT_URL = 'https://snapchat.com/add/El.Doctor59'
 TELEGRAM_API_URL = f"https://api.telegram.org/bot{BOT_TOKEN}"
 
 def send_message(chat_id, text, reply_markup=None):
@@ -62,7 +62,7 @@ def send_photo(chat_id, caption, reply_markup=None):
 def handle_start(chat_id):
     """Gérer la commande /start"""
     print(f"🎯 Traitement /start pour chat_id: {chat_id}")
-    caption = """🌟 BIENVENUE CHEZ LE CERCLE DE NOSTRA 🌟
+    caption = """🌟 BIENVENUE CHEZ El Doctor 🌟
 NOUS TE LAISSONS NAVIGUER SUR NOTRE MINI-APP 📱
 🔥 Produits Premium - 59-62 🔥"""
     
@@ -97,7 +97,7 @@ NOUS TE LAISSONS NAVIGUER SUR NOTRE MINI-APP 📱
     if not result or not result.get('ok'):
         # Fallback: envoyer juste le texte
         print("⚠️ Photo échouée, envoi texte")
-        send_message(chat_id, f"🌟 **BIENVENUE CHEZ LE CERCLE DE NOSTRA** 🌟\n\n{caption}", json.dumps(reply_markup))
+        send_message(chat_id, f"🌟 **BIENVENUE CHEZ El Doctor** 🌟\n\n{caption}", json.dumps(reply_markup))
 
 def handle_message(update):
     """Gérer les messages entrants"""
@@ -117,7 +117,7 @@ def handle_message(update):
         handle_start(chat_id)
     else:
         print("❓ Commande inconnue")
-        send_message(chat_id, 'Utilisez /start pour accéder à la mini-app Le Shop De Many 🌿')
+        send_message(chat_id, 'Utilisez /start pour accéder à la mini-app El Doctor 🌿')
 
 def set_webhook(webhook_url):
     """Configurer le webhook"""

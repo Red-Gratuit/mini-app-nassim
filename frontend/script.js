@@ -147,7 +147,7 @@ function showProduct(id) {
     </div>
 
     <p style="margin-top: 25px; text-align: center; font-size: 1.1rem; color: #aaa;">
-      💬 Contacte-moi sur <strong style="color: #ff416c;">Snap : NostraaFafa</strong>
+      💬 Contacte-moi sur <strong style="color: #ff416c;">Snap : El.Doctor59</strong>
     </p>
   `;
 
